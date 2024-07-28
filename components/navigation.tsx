@@ -57,14 +57,14 @@ export function Navigation() {
       )}
       <header
         className={cn(
-          "fixed inset-x-0 -bottom-32 z-20 mx-auto mb-4 px-4 transition-all animate-out duration-1000 sm:top-0 sm:h-16 sm:px-0 sm:transition-none",
+          "fixed inset-x-0 -bottom-32 z-20 mx-auto mb-4 px-4 transition-all duration-1000 animate-out sm:top-0 sm:h-16 sm:px-0 sm:transition-none",
           visible && "bottom-0 animate-in",
           siteMetadata.activeAnnouncement && "sm:top-28 md:top-20 lg:top-12"
         )}
       >
         {defaultAuthor.availableForWork && (
           <div className="mx-auto mb-2 text-center sm:hidden">
-            <Link href="/now" aria-label="Go to Now page">
+            <Link href="/" aria-label="Go to Now page">
               <WorkAvailabilityBadge />
             </Link>
           </div>
@@ -78,13 +78,13 @@ export function Navigation() {
                     className="duration-300 group-hover:scale-110"
                     width={40}
                     height={40}
-                    src="/avatar.png"
+                    src="/avatarMain.png"
                     alt={defaultAuthor.name}
                   />
                 </Link>
               </div>
               {defaultAuthor.availableForWork && (
-                <Link href="/now" aria-label="Go to Now page" className="ml-2 hidden sm:block">
+                <Link href="/blog" aria-label="Go to Now page" className="ml-2 hidden sm:block">
                   <WorkAvailabilityBadge />
                 </Link>
               )}

@@ -28,7 +28,7 @@ export interface MobileLinkProps extends LinkProps {
 
 export type AnalyticsProvider = "umami" | "vercel" | "plausible" | "google";
 
-export type NewsletterProvider = "convertkit" | "substack" | "mailerlite";
+export type NewsletterProvider = "convertkit" | "substack" | "mailerlite" | "DevSajjad";
 
 export type SiteMetaData = {
   title: {

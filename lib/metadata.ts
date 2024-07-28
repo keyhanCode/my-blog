@@ -8,22 +8,21 @@ export const BASE_URL =
   `http://localhost:${process.env.PORT || 3000}`;
 
 export const defaultAuthor: AuthorType = {
-  name: "David Levai",
-  handle: "@thedevdavid",
+  name: "Sajjad Zarepour",
+  handle: "Experienced at Node.js/Express",
   socialProfiles,
-  email: "david@davidlevai.com",
-  website: "https://davidlevai.com",
-  jobTitle: "Product Engineer",
-  company: "Solopreneur",
+  email: "sajadzarepur@gmail.com",
+  website: "https://devsajjad.ir",
+  jobTitle: "Developer Experience at Node.js / Express",
   availableForWork: true,
   location: {
-    city: "Toronto",
-    media: "/toronto.jpg",
+    city: "Iran - Mashhad",
+    media: "/city.jpg",
   },
 };
 
-const defaultTitle = `${defaultAuthor.name}'s Digital Garden`;
-const defaultDescription = `I'm ${defaultAuthor.name}. A full-stack product engineer and music-tech CTO building hackin’ cool digital products around the world 🌴.`;
+const defaultTitle = `${defaultAuthor.name} | Developer Experience at Node.js / Express`;
+const defaultDescription = `I'm ${defaultAuthor.name} . Here is my expriences and What I'm learning about becoming a better developer, and growing a career in tech..`;
 
 const siteMetadata: SiteMetaData = {
   title: {
@@ -31,9 +30,9 @@ const siteMetadata: SiteMetaData = {
     default: defaultTitle,
   },
   description: defaultDescription,
-  siteRepo: "https://github.com/thedevdavid/website-2023",
-  newsletterProvider: "mailerlite",
-  newsletterUrl: "https://developreneur.davidlevai.com",
+  siteRepo: "https://github.com/theDevSajjad/my-blog",
+  newsletterProvider: "DevSajjad",
+  newsletterUrl: "https://devsajjad.ir/posts",
   analyticsProvider: "umami",
   defaultTheme: "system",
   activeAnnouncement: false,

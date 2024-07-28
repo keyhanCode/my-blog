@@ -67,10 +67,10 @@ const NewsletterSubscribe = ({
 
   return (
     <section
-      className={cn("relative isolate my-24 overflow-hidden bg-primary py-6 text-primary-foreground", className)}
+      className={cn("relative isolate my-24 overflow-hidden bg-primary py-0 text-primary-foreground", className)}
       {...props}
     >
-      <div className="p-8 md:p-12">
+      {/* <div className="p-8 md:p-12">
         <div className="mx-auto max-w-lg text-center">
           <h2 className="font-heading text-2xl font-bold md:text-3xl">{title}</h2>
 
@@ -86,7 +86,7 @@ const NewsletterSubscribe = ({
                 render={({ field }) => (
                   <FormItem className="flex-auto">
                     <FormControl>
-                      <Input type="email" placeholder="anakin.skywalker@darksi.de" {...field} />
+                      <Input type="email" placeholder="exampl@email.com" {...field} />
                     </FormControl>
                     <FormMessage />
                   </FormItem>
@@ -128,7 +128,7 @@ const NewsletterSubscribe = ({
             <stop offset={1} stopColor="#E935C1" stopOpacity={0} />
           </radialGradient>
         </defs>
-      </svg>
+      </svg> */}
     </section>
   );
 };
