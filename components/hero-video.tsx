@@ -19,7 +19,7 @@ export function HeroVideo({ title, subtitle }: HeroProps) {
           className="aspect-square h-10 w-10 rounded-full border border-black"
           width={40}
           height={40}
-          src="/avatarMain.png"
+          src="/avatarmain.png"
           alt={defaultAuthor.name}
         />
       </div>

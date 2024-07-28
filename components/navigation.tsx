@@ -78,7 +78,7 @@ export function Navigation() {
                     className="duration-300 group-hover:scale-110"
                     width={40}
                     height={40}
-                    src="/avatarMain.png"
+                    src="/avatarmain.png"
                     alt={defaultAuthor.name}
                   />
                 </Link>
