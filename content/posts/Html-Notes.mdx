@@ -1,0 +1,146 @@
+---
+title: "Understanding Function Types in JavaScript"
+publishedDate: "2023-07-05"
+lastUpdatedDate: "2023-07-05"
+tags:
+  - JavaScript
+description: "This article explores the various ways to create functions in JavaScript, including function declarations, function expressions, arrow functions, constructor functions, and generator functions."
+status: published
+---
+
+# Creating Functions in JavaScript: Types and Differences
+
+In JavaScript, functions can be created in multiple ways. The two primary types are **Function Declaration** and **Function Expression**, but there are others as well, such as **Arrow Functions** and **Constructor Functions**. Below are the main types and their differences:
+
+## 1. Function Declaration
+
+A **function declaration** defines a named function using the `function` keyword. It is hoisted, meaning it can be called before it appears in the code.
+
+```js
+function greet() {
+  console.log("Hello!");
+}
+
+greet(); // "Hello!"
+```
+
+**Key Characteristics:**
+
+- Hoisted to the top of their scope.
+- Defined with a `function` keyword followed by a name.
+- Can be called before the function definition in the code.
+
+## 2. Function Expression
+
+A **function expression** defines a function as part of an expression. It can be anonymous or named. It is not hoisted, so it can only be called after it is defined.
+
+```js
+const greet = function () {
+  console.log("Hello!");
+};
+
+greet(); // "Hello!"
+```
+
+**Key Characteristics:**
+
+- Not hoisted, so it cannot be called before it's defined.
+- Can be anonymous or named (though named is less common).
+- Typically assigned to a variable or passed as an argument to other functions.
+
+### Differences between Function Declaration and Function Expression:
+
+| Feature                              | Function Declaration | Function Expression                  |
+| ------------------------------------ | -------------------- | ------------------------------------ |
+| **Hoisting**                         | Yes, hoisted         | No, not hoisted                      |
+| **Can be called before definition?** | Yes                  | No                                   |
+| **Can have a name?**                 | Yes                  | Optional (can be anonymous or named) |
+
+## 3. Arrow Function (ES6)
+
+An **arrow function** is a shorthand way of writing a function, introduced in ES6. It doesn’t have its own `this` value and is often used in situations where a simple function is needed.
+
+```js
+const greet = () => {
+  console.log("Hello!");
+};
+
+greet(); // "Hello!"
+```
+
+**Key Characteristics:**
+
+- Shorter syntax than traditional function expressions.
+- Does not have its own `this`, `arguments`, `super`, or `new.target`.
+- Not suitable for methods or constructor functions.
+- Useful for one-liners or callback functions.
+
+## 4. Constructor Function
+
+A **constructor function** is used to create objects. The `new` keyword is used to invoke these functions.
+
+```js
+function Person(name) {
+  this.name = name;
+}
+
+const person1 = new Person("John");
+console.log(person1.name); // "John"
+```
+
+**Key Characteristics:**
+
+- Invoked using the `new` keyword.
+- Used to create instances of objects.
+- Functions used as constructors typically start with a capital letter by convention.
+
+## 5. Immediately Invoked Function Expression (IIFE)
+
+An **IIFE** is a function expression that is executed immediately after it is defined. It’s often used to create a private scope.
+
+```js
+(function () {
+  console.log("Hello!");
+})();
+```
+
+**Key Characteristics:**
+
+- Executed immediately after creation.
+- Creates a new scope to avoid polluting the global scope.
+- Often used for module pattern or to isolate variables.
+
+## 6. Generator Function
+
+A **generator function** is a special type of function that can be paused and resumed. It’s defined using the `function*` syntax.
+
+```js
+function* generatorFunction() {
+  yield "First";
+  yield "Second";
+  return "Third";
+}
+
+const generator = generatorFunction();
+console.log(generator.next().value); // 'First'
+console.log(generator.next().value); // 'Second'
+console.log(generator.next().value); // 'Third'
+```
+
+**Key Characteristics:**
+
+- Can pause its execution using the `yield` keyword.
+- Returns an iterator that can be used to control the function execution.
+
+## Summary Table
+
+| Type of Function         | Hoisted | Can be Anonymous | `this` Binding | Use Case                                               |
+| ------------------------ | ------- | ---------------- | -------------- | ------------------------------------------------------ |
+| **Function Declaration** | Yes     | No               | Own `this`     | General-purpose function declarations                  |
+| **Function Expression**  | No      | Yes              | Own `this`     | Functions assigned to variables or passed as arguments |
+| **Arrow Function**       | No      | Yes              | Lexical `this` | Short functions, callbacks, avoids `this` issues       |
+| **Constructor Function** | No      | No               | Own `this`     | Creating objects with `new`                            |
+| **IIFE**                 | No      | Yes              | Own `this`     | Executing a function immediately                       |
+| **Generator Function**   | No      | No               | Own `this`     | Iterators, complex control flows                       |
+
+Each of these function types serves different purposes and are used based on the specific needs of your code.
